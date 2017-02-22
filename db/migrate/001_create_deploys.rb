@@ -1,9 +1,9 @@
 class CreateDeploys < ActiveRecord::Migration
   def change
     create_table :deploys do |t|
-      t.column :deploy_name, :string, :null => false
+      t.column :deploy_name, :string, null: false
 
-      t.references :project
+      t.column :project, :string, null: false
 
       t.column :date, :date, :null => false
       t.column :start_time, :string,  :limit => 255, :null => false
