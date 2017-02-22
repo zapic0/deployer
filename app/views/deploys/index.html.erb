@@ -1,0 +1,25 @@
+<h2>Deploys</h2>
+
+<% sort_css_classes ||= '' %>
+<% css_classes ||= '' %>
+
+  <div class="autoscroll">
+  <table class="list issues odd-even <%= sort_css_classes %>">
+    <thead>
+      <tr>
+        <%= content_tag('th', 'Project') %>
+        <%= content_tag('th', 'Name') %>
+        <%= content_tag('th', 'Date') %>
+      </tr>
+    </thead>
+    <tbody>
+      <% @deploys.each do |deploy| %>
+        <tr class="<%= current_cycle %>">
+        <td colspan="0" class="<%= css_classes %>"><%= @project_id %></td>
+          <td colspan="1" class="<%= css_classes %>"><%= deploy.deploy_name %></td>
+          <td colspan="2" class="<%= css_classes %>"><%= deploy.date %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  </div>
