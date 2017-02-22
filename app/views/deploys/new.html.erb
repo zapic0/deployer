@@ -1,0 +1,9 @@
+<h2>New Deploy</h2>
+
+<%= form_for @deploy, url: { action: "create" }, builder: (defined? TabularFormBuilder) ? TabularFormBuilder : Redmine::Views::LabelledFormBuilder do |f| %>
+
+
+  <%= render(:partial => 'form', locals: { :f => f }) %>
+
+
+<% end %>
