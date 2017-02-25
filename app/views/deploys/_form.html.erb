@@ -1,6 +1,24 @@
 
 
-<p><%= f.text_field(:release_notes, :size => 300, :required => true) %></p>
-<p><%= f.text_field(:affected_projects, :size => 30, :required => false) %></p>
 
-<%= submit_tag l(:button_send) %>
+<div class="box tabular">
+  <p><%= f.text_area(:release_notes, :rows => 8, :required => true) %></p>
+  <p><%= f.text_field(:affected_projects, :size => 30, :required => false) %></p>
+
+  <p><%= f.label :issues %>
+  <%= f.collection_select(:issues, @project_issues, :id, :subject, {:include_blank => ''}, {multiple: true, class: 'select2_wide'})%></p>
+
+
+  <!--
+  -->
+  <%= submit_tag l(:button_send) %>
+</div>
+
+
+<script type="text/javascript">
+  $('#deploy_issues').select2();
+</script>
+
+<% content_for :header_tags do %>
+    <%= stylesheet_link_tag 'deployer.css', :plugin => 'deployer' %>
+<% end %>

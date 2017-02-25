@@ -1,3 +1,5 @@
+require_dependency 'deployer/hooks'
+
 Redmine::Plugin.register :deployer do
   name 'Deployer plugin'
 
