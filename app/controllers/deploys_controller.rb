@@ -13,6 +13,14 @@ class DeploysController < ApplicationController
     @deploy = Deploy.new
   end
 
+  def show
+    load_deploy
+  end
+
+  def edit
+    load_deploy
+  end
+
   def create
     deploy_name = Time.now.strftime('%Y%M%d%H%M')
     deploy_params = params[:deploy].permit(:affected_projects, :release_notes)
@@ -29,6 +37,11 @@ class DeploysController < ApplicationController
 
 
   private
+
+  def load_deploy
+    @deploy = Deploy.find_by_id(params[:id])
+    @project_issues = @project.issues
+  end
 
   def load_project
     @project = Project.find_by(identifier: params[:project_id])
