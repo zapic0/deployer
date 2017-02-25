@@ -23,7 +23,7 @@ class DeploysController < ApplicationController
   end
 
   def create
-    deploy_name = Time.now.strftime('%Y%M%d%H%M')
+    deploy_name = Time.now.strftime('%Y%m%d%H%M')
     deploy_params = params[:deploy].permit(:affected_projects, :release_notes)
     deploy_params[:deploy_name] = deploy_name
     deploy_params[:date] = Date.today
