@@ -11,6 +11,7 @@ class DeploysController < ApplicationController
 
   def new
     @deploy = Deploy.new
+    @project_issues = @project.issues
   end
 
   def show
@@ -33,6 +34,7 @@ class DeploysController < ApplicationController
 
     deploy.save!
 
+    redirect_to action: :index
   end
 
 
