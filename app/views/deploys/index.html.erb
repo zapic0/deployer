@@ -15,8 +15,8 @@
     <tbody>
       <% @deploys.each do |deploy| %>
         <tr class="<%= current_cycle %>">
-        <td colspan="0" class="<%= css_classes %>"><%= @project_id %></td>
-          <td colspan="1" class="<%= css_classes %>"><%= deploy.deploy_name %></td>
+          <td colspan="0" class="<%= css_classes %>"><%= @project_id %></td>
+          <td colspan="1" class="<%= css_classes %>"><%= link_to(deploy.deploy_name, project_deploy_path(id: deploy.id)) %></td>
           <td colspan="2" class="<%= css_classes %>"><%= deploy.date %></td>
         </tr>
       <% end %>
