@@ -6,17 +6,15 @@
   <p><%= f.text_field(:affected_projects, :size => 30, :required => false) %></p>
 
   <p><%= f.label :issues %>
-  <%= f.collection_select(:issues, @project_issues, :id, :subject, {:include_blank => ''}, {multiple: true, class: 'select2_wide'})%></p>
+  <%= f.collection_select(:issue_ids, @project_issues, :id, :subject, {:include_blank => ''}, {multiple: true, class: 'select2_wide'})%></p>
 
 
-  <!--
-  -->
   <%= submit_tag l(:button_send) %>
 </div>
 
 
 <script type="text/javascript">
-  $('#deploy_issues').select2();
+  $('#deploy_issue_ids').select2();
 </script>
 
 <% content_for :header_tags do %>
