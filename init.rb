@@ -1,5 +1,11 @@
 require_dependency 'deployer/hooks'
 
+ActionDispatch::Callbacks.to_prepare do
+  require_dependency 'deployer/issue_patch'
+  require_dependency 'deployer/project_patch'
+end
+
+
 Redmine::Plugin.register :deployer do
   name 'Deployer plugin'
 
