@@ -10,5 +10,11 @@ module Deployer
     render_on :view_layouts_base_html_head,
               :partial => 'hooks/select2'
 
+    render_on :view_projects_form,
+              :partial => 'hooks/project_deployer_settings'
+
+    render_on :view_issues_show_details_bottom,
+              :partial => 'hooks/issue_deploys'
+
   end
 end
