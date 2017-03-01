@@ -1,0 +1,14 @@
+<% unless @issue.deploys.blank? %>
+  <hr>
+
+  <div class="description">
+
+    <p><strong><%= t('.appears_in_these_deploys') %></strong></p>
+
+    <% @issue.deploys.each do |deploy| %>
+      <p><%= link_to(deploy.deploy_name, project_deploy_path(id: deploy.id, project_id: @project.identifier)) %></p>
+    <% end %>
+
+  </div>
+
+<% end %>
