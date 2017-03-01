@@ -33,9 +33,11 @@ class DeploysController < ApplicationController
     deploy = Deploy.create(deploy_params)
     deploy.deploy_name = deploy_name
 
-    deploy.save!
-
-    redirect_to action: :index
+    if(deploy.save)
+      redirect_to action: :index
+    else
+      redirect_to action: :new
+    end
   end
 
 
