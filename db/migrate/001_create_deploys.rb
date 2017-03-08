@@ -6,12 +6,14 @@ class CreateDeploys < ActiveRecord::Migration
       t.column :project, :string, null: false
 
       t.column :date, :date, :null => false
-      t.column :start_time, :string,  :limit => 255, :null => false
-      t.column :estimated_end_time, :integer, :default => 1, :null => false
+      t.column :start_time, :datetime, :null => false
+      t.column :estimated_end_time, :datetime, :null => false
 
-      t.column :release_notes, :string
+      t.column :release_notes, :string, :null => false
       t.column :affected_projects, :string
       t.column :authorization, :string
+
+      t.column :state, :string
     end
 
     add_index :deploys, :id, :name => :deploys_list_id
