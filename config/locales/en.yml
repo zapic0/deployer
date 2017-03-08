@@ -5,6 +5,7 @@ en:
   field_estimated_end_time: "End time"
   field_affected_projects: "Affected Projects (optional)"
   field_release_notes: "Release notes"
+  field_authorization: "Authorization (optional)"
   button_send: "Create Deploy"
   field_customers_deploys_notifications_emails: "Emails to notify customers or external people about deploys"
   field_deploys_notifications_emails: "Emails to notify company people about deploys"
@@ -14,3 +15,6 @@ en:
       appears_in_these_deploys: "Deploys"
   project_deployer_settings:
     deployer_settings: 'Deployer settings'
+  deploys:
+    index:
+      new_deploy: 'Create new deploy'

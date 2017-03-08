@@ -1,0 +1,57 @@
+es:
+  in_progress: "En progreso"
+  finished: "Finalizado"
+  failed: "Fallido"
+  field_date: "Fecha"
+  field_start_time: "Hora de inicio"
+  field_estimated_end_time: "Hora de fin"
+  field_affected_projects: "Proyectos afectados (opcional)"
+  field_release_notes: "Notas de la versión"
+  field_authorization: "Autorización (opcional)"
+  field_customers_deploys_notifications_emails: "Emails de notificación sobre despliegues a clientes o gente externa"
+  field_deploys_notifications_emails: "Emails de notificación sobre despliegues a compañeros"
+  field_abbreviation: "Abreviatura del Proyecto"
+  hooks:
+    issue_deploys:
+      appears_in_these_deploys: "Despliegues"
+  project_deployer_settings:
+    deployer_settings: 'Configuración de Deployer'
+  deploys:
+    index:
+      new_deploy: 'Crear nuevo despliegue'
+      create_new_deploy: 'Crear nuevo despliegue'
+      name: 'Nombre'
+      release_notes: 'Notas de la versión'
+      date: 'Fecha'
+      deploys: 'Despliegues'
+      view: "Ver"
+      edit: "Editar"
+    new:
+      new_deploy: 'Nuevo Despliegue'
+      button_send: "Crear Despliegue"
+    show:
+      issue: 'Petición %{index}'
+      issues: 'Peticiones'
+      date: 'Fecha'
+      start_time: 'Hora de Inicio'
+      estimated_end_time: 'Hora estimada de fin'
+      release_notes: Notas de la versión
+      affected_projects: Proyectos afectados
+      authorization: Autorización
+      edit: Editar
+      send_start_mail: Enviar correo de inicio de despliegue
+      send_successful_end_mail: Enviar correo de finalización correcta
+      send_rollback_mail: Enviar correo de finalización fallida
+    edit:
+      button_send: "Guardar Cambios"
+    update:
+      deploy_updated: "Despliegue actualizado"
+    create:
+      new_deploy_created: 'Nuevo despliegue creado correctamente'
+    send_start:
+      mails_sent: "Correos enviados"
+    send_successful_end:
+      mails_sent: "Correos enviados"
+    send_rollback:
+      mails_sent: "Correos enviados"
+
