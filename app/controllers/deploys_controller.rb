@@ -1,5 +1,6 @@
 class DeploysController < ApplicationController
   before_action :load_project
+  before_action :load_deploy, :except => [:index, :new]
 
 
   def index
@@ -15,33 +16,91 @@ class DeploysController < ApplicationController
   end
 
   def show
-    load_deploy
+  end
+
+  def send_start
+    @deploy.state = "in_progress"
+    @deploy.save
+
+    asdasda
+
+    Mailer::DeployerMailer.send_start(@deploy, @project).deliver
+
+    flash[:info] = t('.mails_sent')
+    redirect_to action: :show, id: @deploy.id, project_id: @project.identifier
+  end
+
+  def send_successful_end
+    @deploy.state = "finished"
+    @deploy.save
+    flash[:info] = t('.mails_sent')
+    redirect_to action: :show, id: @deploy.id, project_id: @project.identifier
+  end
+
+  def send_rollback
+    @deploy.state = "failed"
+    @deploy.save
+    flash[:info] = t('.mails_sent')
+    redirect_to action: :show, id: @deploy.id, project_id: @project.identifier
   end
 
   def edit
-    load_deploy
+    unless params[:deploy].blank?
+      deploy_params = load_from_params
+      @deploy = Deploy.create(deploy_params)
+    end
+  end
+
+  def update
+    deploy_params = load_from_params
+    @deploy.update_attributes(deploy_params)
+    if(@deploy.save)
+      flash[:info] = t('.deploy_updated')
+      redirect_to action: :index
+    else
+      flash[:warning] = t('.error_saving_deploy')
+      render action: :edit
+    end
   end
 
   def create
 
-    deploy_name = Time.now.strftime('%Y%m%d%H%M')
-    deploy_params = params[:deploy].permit(:affected_projects, :release_notes, {:issue_ids => []})
-    deploy_params[:deploy_name] = deploy_name
-    deploy_params[:date] = Date.today
-    deploy_params[:start_time] = Time.now
-    deploy_params[:project] = params[:project_id]
-    deploy = Deploy.create(deploy_params)
-    deploy.deploy_name = deploy_name
+    unless params[:deploy].blank?
+      deploy_params = load_from_params
+      @deploy = Deploy.create(deploy_params)
+      @deploy.state = 'pendant'
+    end
 
-    if(deploy.save)
-      redirect_to action: :index
+    if(@deploy.save)
+      flash[:info] = t('.new_deploy_created')
+      redirect_to action: :edit, id: @deploy.id, project_id: @project.identifier
     else
-      redirect_to action: :new
+      flash[:warning] = t('.error_saving_deploy')
+      render action: :new
     end
   end
 
 
   private
+
+
+  def load_from_params
+    date = Date.parse(params[:deploy][:date])
+    start_time = Time.parse(params[:deploy][:start_time])
+    end_time = Time.parse(params[:deploy][:estimated_end_time])
+    deploy_name = date.strftime('%Y%m%d') + start_time.strftime('%H%M')
+    deploy_name = date.strftime('%Y%m%d%H%M')
+
+
+    deploy_params = params[:deploy].permit(:affected_projects, :release_notes, {:issue_ids => []}, :approved, :date, :start_time, :estimated_end_time, :authorization)
+    deploy_params[:deploy_name] = deploy_name
+    deploy_params[:date] = date
+    deploy_params[:start_time] = start_time
+    deploy_params[:estimated_end_time] = end_time
+    deploy_params[:project] = params[:project_id]
+
+    deploy_params
+  end
 
   def load_deploy
     @deploy = Deploy.find_by_id(params[:id])
