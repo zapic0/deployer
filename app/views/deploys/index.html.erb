@@ -1,23 +1,35 @@
-<h2>Deploys</h2>
+<h2><%= t('.deploys') %></h2>
 
 <% sort_css_classes ||= '' %>
 <% css_classes ||= '' %>
 
+<%= link_to t('.create_new_deploy'), new_project_deploy_path(project_id: @project_id) %>
+
   <div class="autoscroll">
-  <table class="list issues odd-even <%= sort_css_classes %>">
+
+  <table class="list issues odd-even sort-by-id sort-desc">
     <thead>
       <tr>
-        <%= content_tag('th', 'Project') %>
-        <%= content_tag('th', 'Name') %>
-        <%= content_tag('th', 'Date') %>
+        <%= content_tag('th', t('.name')) %>
+        <%= content_tag('th', t('.release_notes'), colspan: 3) %>
+        <%= content_tag('th', t('.date')) %>
+        <%= content_tag('th', t('.view')) %>
       </tr>
     </thead>
     <tbody>
-      <% @deploys.each do |deploy| %>
-        <tr class="<%= current_cycle %>">
-          <td colspan="0" class="<%= css_classes %>"><%= @project_id %></td>
-          <td colspan="1" class="<%= css_classes %>"><%= link_to(deploy.deploy_name, project_deploy_path(id: deploy.id)) %></td>
-          <td colspan="2" class="<%= css_classes %>"><%= deploy.date %></td>
+      <% @deploys.each_with_index do |deploy, index| %>
+        <%
+          if index.even?
+            classes = "hascontextmenu even issue tracker-1 status-1 priority-1 priority-default"
+          else
+            classes = "hascontextmenu odd issue tracker-1 status-1 priority-1 priority-default"
+          end
+        %>
+        <tr class="<%= classes %>">
+          <td colspan="1" class="id"><%= link_to(deploy.deploy_name, project_deploy_path(id: deploy.id)) %></td>
+          <td colspan="3" class="release_notes"><%= deploy.release_notes %></td>
+          <td colspan="1" class="date"><%= deploy.date %></td>
+          <td colspan="1" class="view"><%= link_to(t('.view'), project_deploy_path(id: deploy.id)) %></td>
         </tr>
       <% end %>
     </tbody>
