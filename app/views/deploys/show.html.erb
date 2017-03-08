@@ -1,9 +1,30 @@
 <h2>Deploy <%= @deploy.deploy_name %></h2>
 
+<h3><%= t(@deploy.state) %></h3>
+
+
 <%= form_for @deploy, url: { action: "create" }, builder: (defined? TabularFormBuilder) ? TabularFormBuilder : Redmine::Views::LabelledFormBuilder do |f| %>
 
+  <div class="box tabular">
 
-  <%= render(:partial => 'form', locals: { :f => f }) %>
+    <p><strong><%= t('.date') %></strong>: <%= @deploy.date %></p>
+    <p><strong><%= t('.start_time') %></strong>: <%= @deploy.start_time %></p>
+    <p><strong><%= t('.estimated_end_time') %></strong>: <%= @deploy.estimated_end_time %></p>
+    <p><strong><%= t('.release_notes') %></strong>: <%= @deploy.release_notes %></p>
+    <p><strong><%= t('.affected_projects') %></strong>: <%= @deploy.affected_projects %></p>
+    <p><strong><%= t('.authorization') %></strong>: <%= @deploy.authorization %></p>
 
+    <hr/>
+    <p><strong><%= t('.issues') %></strong></p>
+    <% @deploy.issues.each_with_index do |issue, index| %>
+      <p><strong><%= t('.issue', index: index+1) %></strong>: <%= link_to issue.subject, issue_path(issue.id) %></p>
+    <% end %>
+
+    <%= link_to(t('.edit'), edit_project_deploy_path(id: @deploy.id, project_id: @project.identifier)) %> |
+    <%= link_to(t('.send_start_mail'), send_start_project_deploy_path(id: @deploy.id, project_id: @project.identifier)) %> |
+    <%= link_to(t('.send_successful_end_mail'), send_successful_end_project_deploy_path(id: @deploy.id, project_id: @project.identifier)) %> |
+    <%= link_to(t('.send_rollback_mail'), send_rollback_project_deploy_path(id: @deploy.id, project_id: @project.identifier)) %>
+
+  </div>
 
 <% end %>
