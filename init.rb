@@ -20,6 +20,4 @@ Redmine::Plugin.register :deployer do
 
   menu :project_menu, :deploys, { :controller => 'deploys', :action => 'index' }, :caption => 'Deploys', :after=>:activity, :param=>:project_id
 
-  menu :project_menu, :deployer, { :controller => 'deploys', :action => 'new' }, :caption => 'New Deploy', :after=>:deploys, :param=>:project_id
-
 end
