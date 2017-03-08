@@ -1,7 +1,7 @@
 
 
 
-<div class="box tabular">
+
   <p><%= f.date_field(:date, required: true) %></p>
   <p><%= f.time_field(:start_time, required: true) %></p>
   <p><%= f.time_field(:estimated_end_time, required: true) %></p>
@@ -11,16 +11,3 @@
 
   <p><%= f.label :issues %>
   <%= f.collection_select(:issue_ids, @project_issues, :id, :subject, {:include_blank => ''}, {:required => true, multiple: true, class: 'select2_wide'})%></p>
-
-
-  <%= submit_tag l(:button_send) %>
-</div>
-
-
-<script type="text/javascript">
-  $('#deploy_issue_ids').select2();
-</script>
-
-<% content_for :header_tags do %>
-    <%= stylesheet_link_tag 'deployer.css', :plugin => 'deployer' %>
-<% end %>

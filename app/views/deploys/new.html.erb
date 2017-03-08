@@ -1,9 +1,20 @@
-<h2>New Deploy</h2>
+<h2><%= t('.new_deploy') %></h2>
 
 <%= form_for @deploy, url: { action: "create" }, builder: (defined? TabularFormBuilder) ? TabularFormBuilder : Redmine::Views::LabelledFormBuilder do |f| %>
 
+  <div class="box tabular">
 
-  <%= render(:partial => 'form', locals: { :f => f }) %>
+    <%= render(:partial => 'form', locals: { :f => f }) %>
+    <%= submit_tag t('.button_send') %>
 
+  </div>
 
+<% end %>
+
+<script type="text/javascript">
+  $('#deploy_issue_ids').select2();
+</script>
+
+<% content_for :header_tags do %>
+    <%= stylesheet_link_tag 'deployer.css', :plugin => 'deployer' %>
 <% end %>
