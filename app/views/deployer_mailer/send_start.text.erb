@@ -1,0 +1,30 @@
+
+Hola.
+
+Notificamos el siguiente despliegue a las <%= @deploy.start_time %>:
+
+*Release notes <%= @deploy.deploy_name %>*
+
+<%= @deploy.release_notes unless @deploy.release_notes.blank? %>
+
+Ventana de deploy: <%= @deploy.date %> <%= @deploy.start_time %> - <%= @deploy.estimated_end_time %>
+
+<% unless @deploy.authorization.blank? %>
+ Autorizado por: <%= @deploy.authorization %>
+<% end %>
+
+<% unless @deploy.affected_projects.blank? %>
+  Sites afectados: <%= @deploy.affected_projects %>
+<% end %>
+
+<% unless @deploy.origin.blank? %>
+  Origen de modificaciones: <%= @deploy.origin %>
+<% end %>
+
+Incluye:
+
+<% @deploy.issues.each do |issue| %>
+  <%= "* #{issue.id}: #{issue.subject}" %>
+<% end %>
+
+Un saludo.

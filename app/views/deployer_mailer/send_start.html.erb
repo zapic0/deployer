@@ -1,0 +1,33 @@
+
+
+<p>Hola.</p>
+
+<p>Notificamos el siguiente despliegue a las <%= @deploy.start_time %>:</p>
+
+<p>*Release notes <%= @deploy.deploy_name %>*</p>
+
+<p><%= @deploy.release_notes unless @deploy.release_notes.blank? %></p>
+
+<p>Ventana de deploy: <%= @deploy.date %> <%= @deploy.start_time %> - <%= @deploy.estimated_end_time %></p>
+
+<% unless @deploy.authorization.blank? %>
+ <p>Autorizado por: <%= @deploy.authorization %> </p>
+<% end %>
+
+<% unless @deploy.affected_projects.blank? %>
+  <p>Sites afectados: <%= @deploy.affected_projects %></p>
+<% end %>
+
+<% unless @deploy.origin.blank? %>
+  <p>Origen de modificaciones: <%= @deploy.origin %></p>
+<% end %>
+
+<p>Incluye:</p>
+
+<ul>
+  <% @deploy.issues.each do |issue| %>
+    <li><%= "#{issue.id}: #{issue.subject}" %></li>
+  <% end %>
+</ul>
+
+<p>Un saludo.</p>
