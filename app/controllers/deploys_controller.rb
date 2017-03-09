@@ -13,8 +13,8 @@ class DeploysController < ApplicationController
   def new
     @deploy = Deploy.new
     @deploy.date = Date.today
-    @deploy.start_time = Time.now
-    @deploy.estimated_end_time = Time.now + 30.minutes
+    @deploy.start_time = Time.now + 30.minutes
+    @deploy.estimated_end_time = Time.now + 45.minutes
     @project_issues = @project.issues
   end
 
@@ -85,6 +85,12 @@ class DeploysController < ApplicationController
       flash[:warning] = t('.error_saving_deploy')
       render action: :new
     end
+  end
+
+  def delete
+    flash[:info]=t('.deleted')
+    @deploy.destroy
+    redirect_to action: :index
   end
 
 
