@@ -41,6 +41,9 @@ class DeploysController < ApplicationController
   def send_rollback
     @deploy.state = "failed"
     @deploy.save
+
+    Mailer::DeployerMailer.send_rollback(@deploy, @project).deliver
+
     flash[:info] = t('.mails_sent')
     redirect_to action: :show, id: @deploy.id, project_id: @project.identifier
   end
