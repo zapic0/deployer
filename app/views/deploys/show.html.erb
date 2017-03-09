@@ -17,7 +17,7 @@
     <hr/>
     <p><strong><%= t('.issues') %></strong></p>
     <% @deploy.issues.each_with_index do |issue, index| %>
-      <p><strong><%= t('.issue', index: index+1) %></strong>: <%= link_to issue.subject, issue_path(issue.id) %></p>
+      <p><strong><%= t('.issue', index: issue.id) %></strong>: <%= link_to "#{issue.subject}", issue_path(issue.id) %></p>
     <% end %>
 
     <%= link_to(t('.edit'), edit_project_deploy_path(id: @deploy.id, project_id: @project.identifier)) %> |
