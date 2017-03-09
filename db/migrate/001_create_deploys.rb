@@ -13,6 +13,8 @@ class CreateDeploys < ActiveRecord::Migration
       t.column :affected_projects, :string
       t.column :authorization, :string
 
+      t.column :origin, :string
+
       t.column :state, :string
     end
 
