@@ -12,6 +12,11 @@ class DeployerMailer < Mailer
   end
 
 
+  def send_successful_end(deploy, project)
+    @deploy = deploy
+    mail_subject = "[deploys] {#{project.abbreviation}} Notificación de despliegue #{deploy.deploy_name} - Correcto"
+    mail to: project.customers_deploys_notifications_emails, cc: project.deploys_notifications_emails, subject: mail_subject
+  end
 
   def send_rollback(deploy, project)
     @deploy = deploy
