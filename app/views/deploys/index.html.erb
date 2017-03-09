@@ -13,7 +13,7 @@
         <%= content_tag('th', t('.name')) %>
         <%= content_tag('th', t('.release_notes'), colspan: 3) %>
         <%= content_tag('th', t('.date')) %>
-        <%= content_tag('th', t('.view')) %>
+        <%= content_tag('th', t('.delete')) %>
       </tr>
     </thead>
     <tbody>
@@ -29,7 +29,10 @@
           <td colspan="1" class="id"><%= link_to(deploy.deploy_name, project_deploy_path(id: deploy.id)) %></td>
           <td colspan="3" class="release_notes"><%= deploy.release_notes %></td>
           <td colspan="1" class="date"><%= deploy.date %></td>
-          <td colspan="1" class="view"><%= link_to(t('.view'), project_deploy_path(id: deploy.id)) %></td>
+          <td colspan="1" class="delete">
+            <%= link_to(t('.delete'), delete_project_deploy_path(id: deploy.id), data: {confirm: t('.are_you_sure')}) %>
+
+          </td>
         </tr>
       <% end %>
     </tbody>

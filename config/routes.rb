@@ -6,6 +6,7 @@ resources :projects do
       get 'send_start'
       get 'send_successful_end'
       get 'send_rollback'
+      get 'delete'
     end
   end
 end
