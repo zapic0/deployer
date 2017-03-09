@@ -12,6 +12,9 @@ class DeploysController < ApplicationController
 
   def new
     @deploy = Deploy.new
+    @deploy.date = Date.today
+    @deploy.start_time = Time.now
+    @deploy.estimated_end_time = Time.now + 30.minutes
     @project_issues = @project.issues
   end
 
@@ -21,8 +24,6 @@ class DeploysController < ApplicationController
   def send_start
     @deploy.state = "in_progress"
     @deploy.save
-
-    asdasda
 
     Mailer::DeployerMailer.send_start(@deploy, @project).deliver
 
@@ -68,12 +69,12 @@ class DeploysController < ApplicationController
     unless params[:deploy].blank?
       deploy_params = load_from_params
       @deploy = Deploy.create(deploy_params)
-      @deploy.state = 'pendant'
+      @deploy.state = 'pending'
     end
 
     if(@deploy.save)
       flash[:info] = t('.new_deploy_created')
-      redirect_to action: :edit, id: @deploy.id, project_id: @project.identifier
+      redirect_to action: :show, id: @deploy.id, project_id: @project.identifier
     else
       flash[:warning] = t('.error_saving_deploy')
       render action: :new

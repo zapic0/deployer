@@ -1,4 +1,5 @@
 es:
+  pending: "No desplegado"
   in_progress: "En progreso"
   finished: "Finalizado"
   failed: "Fallido"
@@ -8,6 +9,7 @@ es:
   field_affected_projects: "Proyectos afectados (opcional)"
   field_release_notes: "Notas de la versión"
   field_authorization: "Autorización (opcional)"
+  button_send: "Crear despliegue"
   field_customers_deploys_notifications_emails: "Emails de notificación sobre despliegues a clientes o gente externa"
   field_deploys_notifications_emails: "Emails de notificación sobre despliegues a compañeros"
   field_abbreviation: "Abreviatura del Proyecto"

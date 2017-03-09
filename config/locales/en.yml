@@ -1,5 +1,8 @@
-# English strings go here for Rails i18n
 en:
+  pending: "Not deployed"
+  in_progress: "In progress"
+  finished: "Finished"
+  failed: "Failed"
   field_date: "Date"
   field_start_time: "Start time"
   field_estimated_end_time: "End time"
@@ -14,7 +17,43 @@ en:
     issue_deploys:
       appears_in_these_deploys: "Deploys"
   project_deployer_settings:
-    deployer_settings: 'Deployer settings'
+    deployer_settings: 'Deployer Settings'
   deploys:
     index:
       new_deploy: 'Create new deploy'
+      create_new_deploy: 'Create new deploy'
+      name: 'Name'
+      release_notes: 'Release Notes'
+      date: 'Date'
+      deploys: 'Deploys'
+      view: "View"
+      edit: "Edit"
+    new:
+      new_deploy: 'New Deploy'
+      button_send: "Create Deploy"
+    show:
+      issue: 'Issue %{index}'
+      issues: 'Issues'
+      date: 'Date'
+      start_time: 'Start Time'
+      estimated_end_time: 'Estimated end time'
+      release_notes: Release notes
+      affected_projects: Affected Projects
+      authorization: Authorization
+      edit: Edit
+      send_start_mail: Send start deploy mail
+      send_successful_end_mail: Send successful end mail
+      send_rollback_mail: Send rollback mail
+    edit:
+      button_send: "Save changes"
+    update:
+      deploy_updated: "Deploy updated"
+    create:
+      new_deploy_created: 'New deploy created'
+    send_start:
+      mails_sent: "Mails sent"
+    send_successful_end:
+      mails_sent: "Mails sent"
+    send_rollback:
+      mails_sent: "Mails sent"
+
