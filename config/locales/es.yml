@@ -28,6 +28,7 @@ es:
       deploys: 'Despliegues'
       view: "Ver"
       edit: "Editar"
+      are_you_sure: "¿Estás seguro?"
     new:
       new_deploy: 'Nuevo Despliegue'
       button_send: "Crear Despliegue"
@@ -56,4 +57,5 @@ es:
       mails_sent: "Correos enviados"
     send_rollback:
       mails_sent: "Correos enviados"
-
+    delete:
+      deleted: "Despliegue eliminado correctamente"

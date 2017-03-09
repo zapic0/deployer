@@ -24,7 +24,7 @@ Ventana de deploy: <%= @deploy.date %> <%= @deploy.start_time %> - <%= @deploy.e
 Incluye:
 
 <% @deploy.issues.each do |issue| %>
-  <%= "* #{issue.id}: #{issue.subject}" %>
+  <%= "* ##{issue.id}: #{issue.subject}" %>
 <% end %>
 
 Un saludo.
