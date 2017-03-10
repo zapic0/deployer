@@ -1,5 +1,5 @@
-# deployer
-Redmine plugin to group issues into deploys and send notifications when needed
+# Deployer
+Redmine plugin to group issues into deploys and send notifications (e-mails) when needed
 
 ## Install
 * Copy project into your redmine plugins folder.
@@ -11,3 +11,6 @@ Redmine plugin to group issues into deploys and send notifications when needed
 * If you find some problems in your redmine after installation, rollback migrations with:
 
 ```rake redmine:plugins:migrate NAME=deployer VERSION=0```
+
+## Screenshots
+
