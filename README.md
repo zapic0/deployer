@@ -8,9 +8,10 @@ Redmine plugin to group issues into deploys and send notifications (e-mails) whe
 
 * Enjoy
 
-* If you find some problems in your redmine after installation, rollback migrations with:
-
-```rake redmine:plugins:migrate NAME=deployer VERSION=0```
-
 ## Screenshots
 
+### Settings
+
+Deployer adds a new section for projects settings. Customer's email addresses, development/management teams emails addresses and project abbreviation (to be notified before and after deployment).
+
+![Project Settings](screenshots/0.ong)
