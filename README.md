@@ -14,4 +14,4 @@ Redmine plugin to group issues into deploys and send notifications (e-mails) whe
 
 Deployer adds a new section for projects settings. Customer's email addresses, development/management teams emails addresses and project abbreviation (to be notified before and after deployment).
 
-![Project Settings](screenshots/0.ong)
+![Project Settings](screenshots/0.png)
