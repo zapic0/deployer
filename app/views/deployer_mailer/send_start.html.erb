@@ -2,13 +2,13 @@
 
 <p>Hola.</p>
 
-<p>Notificamos el siguiente despliegue a las <%= @deploy.start_time %>:</p>
+<p>Notificamos el siguiente despliegue a las <%=  @deploy.start_time.in_time_zone(Time.now.getlocal.zone).strftime("%H:%M") %>:</p>
 
 <p>*Release notes <%= @deploy.deploy_name %>*</p>
 
 <p><%= @deploy.release_notes unless @deploy.release_notes.blank? %></p>
 
-<p>Ventana de deploy: <%= @deploy.date %> <%= @deploy.start_time %> - <%= @deploy.estimated_end_time %></p>
+<p>Ventana de deploy: <%= @deploy.date %> <%=  @deploy.start_time.in_time_zone(Time.now.getlocal.zone).strftime("%H:%M") %> - <%=  @deploy.estimated_end_time.in_time_zone(Time.now.getlocal.zone).strftime("%H:%M") %></p>
 
 <% unless @deploy.authorization.blank? %>
  <p>Autorizado por: <%= @deploy.authorization %> </p>

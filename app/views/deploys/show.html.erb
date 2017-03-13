@@ -8,8 +8,8 @@
   <div class="box tabular">
 
     <p><strong><%= t('.date') %></strong>: <%= @deploy.date %></p>
-    <p><strong><%= t('.start_time') %></strong>: <%= @deploy.start_time %></p>
-    <p><strong><%= t('.estimated_end_time') %></strong>: <%= @deploy.estimated_end_time %></p>
+    <p><strong><%= t('.start_time') %></strong>: <%= @deploy.start_time.in_time_zone(Time.now.getlocal.zone).strftime("%H:%M") %></p>
+    <p><strong><%= t('.estimated_end_time') %></strong>: <%= @deploy.estimated_end_time.in_time_zone(Time.now.getlocal.zone).strftime("%H:%M") %></p>
     <p><strong><%= t('.release_notes') %></strong>: <%= @deploy.release_notes %></p>
     <p><strong><%= t('.affected_projects') %></strong>: <%= @deploy.affected_projects %></p>
     <p><strong><%= t('.authorization') %></strong>: <%= @deploy.authorization %></p>
