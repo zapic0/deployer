@@ -13,8 +13,8 @@ class DeploysController < ApplicationController
   def new
     @deploy = Deploy.new
     @deploy.date = Date.today
-    @deploy.start_time = Time.now + 30.minutes
-    @deploy.estimated_end_time = Time.now + 45.minutes
+    @deploy.start_time = Time.current + 30.minutes
+    @deploy.estimated_end_time = Time.current + 45.minutes
     @project_issues = @project.issues
   end
 
@@ -102,8 +102,6 @@ class DeploysController < ApplicationController
     start_time = Time.parse(params[:deploy][:start_time])
     end_time = Time.parse(params[:deploy][:estimated_end_time])
     deploy_name = date.strftime('%Y%m%d') + start_time.strftime('%H%M')
-    deploy_name = date.strftime('%Y%m%d%H%M')
-
 
     deploy_params = params[:deploy].permit(:affected_projects, :release_notes, {:issue_ids => []}, :approved, :date, :start_time, :estimated_end_time, :authorization)
     deploy_params[:deploy_name] = deploy_name
