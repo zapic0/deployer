@@ -1,0 +1,62 @@
+zh:
+  pending: "未发布"
+  in_progress: "处理中"
+  finished: "已完成"
+  failed: "发布失败"
+  field_date: "日期"
+  field_start_time: "起始时间"
+  field_estimated_end_time: "结束时间"
+  field_affected_projects: "受影响的项目（选填）"
+  field_release_notes: "发布日志"
+  field_authorization: "授权信息（选填）"
+  button_send: "添加发布记录"
+  field_customers_deploys_notifications_emails: "通过Email方式，通知版本发布相关的客户及第三方人员"
+  field_deploys_notifications_emails: "通过Email方式，通知版本发布相关的公司员工"
+  field_abbreviation: "项目名称缩写"
+  hooks:
+    issue_deploys:
+      appears_in_these_deploys: "版本发布"
+  project_deployer_settings:
+    deployer_settings: '发布设置'
+  deploys:
+    index:
+      new_deploy: '添加发布记录'
+      create_new_deploy: '添加发布记录'
+      name: '发布名称'
+      release_notes: '发布日志'
+      date: '日期'
+      deploys: '发布记录'
+      view: "查看"
+      edit: "编辑"
+      are_you_sure: "确定？"
+    new:
+      new_deploy: '添加发布记录'
+      button_send: "添加发布记录"
+    show:
+      issue: '任务 %{index}'
+      issues: '任务'
+      date: '日期'
+      start_time: '起始时间'
+      estimated_end_time: '预计结束时间'
+      release_notes: 发布日志
+      affected_projects: 受影响的项目
+      authorization: 授权信息
+      edit: 编辑
+      send_start_mail: 发送发布开始邮件通知
+      send_successful_end_mail: 发送发布成功结束邮件通知
+      send_rollback_mail: 发送发布回退邮件通知
+    edit:
+      button_send: "保存"
+    update:
+      deploy_updated: "发布记录已更新。"
+    create:
+      new_deploy_created: '发布记录已添加。'
+    send_start:
+      mails_sent: "发布开始邮件通知已发送。"
+    send_successful_end:
+      mails_sent: "发布成功结束邮件通知已发送。"
+    send_rollback:
+      mails_sent: "发布回退邮件通知已发送。"
+    delete:
+      deleted: "发布记录已删除。"
+
