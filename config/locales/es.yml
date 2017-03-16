@@ -25,6 +25,7 @@ es:
       name: 'Nombre'
       release_notes: 'Notas de la versión'
       date: 'Fecha'
+      state: 'Estado'
       deploys: 'Despliegues'
       view: "Ver"
       edit: "Editar"
