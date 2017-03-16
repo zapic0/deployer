@@ -25,6 +25,7 @@ en:
       name: 'Name'
       release_notes: 'Release Notes'
       date: 'Date'
+      state: 'State'
       deploys: 'Deploys'
       view: "View"
       edit: "Edit"
