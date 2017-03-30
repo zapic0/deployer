@@ -48,6 +48,9 @@ es:
       send_start_mail: Enviar correo de inicio de despliegue
       send_successful_end_mail: Enviar correo de finalización correcta
       send_rollback_mail: Enviar correo de finalización fallida
+      send_start_mail_no_client: Enviar correo de inicio de despliegue (no avisar a cliente)
+      send_successful_end_mail_no_client: Enviar correo de finalización correcta (no avisar a cliente)
+      send_rollback_mail_no_client: Enviar correo de finalización fallida (no avisar a cliente)
     edit:
       button_send: "Guardar Cambios"
     update:

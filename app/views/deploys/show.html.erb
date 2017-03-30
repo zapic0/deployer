@@ -35,11 +35,15 @@
       <p><strong><%= t('.issue', index: issue.id) %></strong>: <%= link_to "#{issue.subject}", issue_path(issue.id) %></p>
     <% end %>
 
-    <%= link_to(t('.edit'), edit_project_deploy_path(id: @deploy.id, project_id: @project.identifier)) %> |
+    <%= link_to(t('.edit'), edit_project_deploy_path(id: @deploy.id, project_id: @project.identifier)) %>
+    <br/>
     <%= link_to(t('.send_start_mail'), send_start_project_deploy_path(id: @deploy.id, project_id: @project.identifier)) %> |
     <%= link_to(t('.send_successful_end_mail'), send_successful_end_project_deploy_path(id: @deploy.id, project_id: @project.identifier)) %> |
     <%= link_to(t('.send_rollback_mail'), send_rollback_project_deploy_path(id: @deploy.id, project_id: @project.identifier)) %>
-
+    <br/>
+    <%= link_to(t('.send_start_mail_no_client'), send_start_project_deploy_path(id: @deploy.id, project_id: @project.identifier, client: false)) %> |
+    <%= link_to(t('.send_successful_end_mail_no_client'), send_successful_end_project_deploy_path(id: @deploy.id, project_id: @project.identifier, client: false)) %> |
+    <%= link_to(t('.send_rollback_mail_no_client'), send_rollback_project_deploy_path(id: @deploy.id, project_id: @project.identifier, client: false)) %>
   </div>
 
 <% end %>
