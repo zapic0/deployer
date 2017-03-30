@@ -1,6 +1,7 @@
 class DeploysController < ApplicationController
   before_action :load_project
   before_action :load_deploy, :except => [:index, :new]
+  before_action :set_recipients, :only => [:send_start, :send_successful_end, :send_rollback]
 
 
   def index
@@ -19,13 +20,15 @@ class DeploysController < ApplicationController
   end
 
   def show
+    load_author
+    load_version
   end
 
   def send_start
     @deploy.state = "in_progress"
     @deploy.save
 
-    Mailer::DeployerMailer.send_start(@deploy, @project).deliver
+    Mailer::DeployerMailer.send_start(@deploy, @project, @recipients).deliver
 
     flash[:info] = t('.mails_sent')
     redirect_to action: :show, id: @deploy.id, project_id: @project.identifier
@@ -35,7 +38,7 @@ class DeploysController < ApplicationController
     @deploy.state = "finished"
     @deploy.save
 
-    Mailer::DeployerMailer.send_successful_end(@deploy, @project).deliver
+    Mailer::DeployerMailer.send_successful_end(@deploy, @project, @recipients).deliver
 
     flash[:info] = t('.mails_sent')
     redirect_to action: :show, id: @deploy.id, project_id: @project.identifier
@@ -45,7 +48,7 @@ class DeploysController < ApplicationController
     @deploy.state = "failed"
     @deploy.save
 
-    Mailer::DeployerMailer.send_rollback(@deploy, @project).deliver
+    Mailer::DeployerMailer.send_rollback(@deploy, @project, @recipients).deliver
 
     flash[:info] = t('.mails_sent')
     redirect_to action: :show, id: @deploy.id, project_id: @project.identifier
@@ -76,6 +79,7 @@ class DeploysController < ApplicationController
       deploy_params = load_from_params
       @deploy = Deploy.create(deploy_params)
       @deploy.state = 'pending'
+      @deploy.user_id = User.current.id
     end
 
     if(@deploy.save)
@@ -109,6 +113,7 @@ class DeploysController < ApplicationController
     deploy_params[:start_time] = start_time
     deploy_params[:estimated_end_time] = end_time
     deploy_params[:project] = params[:project_id]
+    deploy_params[:version_id] = params[:version]
 
     deploy_params
   end
@@ -118,8 +123,30 @@ class DeploysController < ApplicationController
     @project_issues = @project.issues
   end
 
+  def load_author
+    unless @deploy.user_id.blank?
+      @user = User.find @deploy.user_id
+    end
+  end
+
+  def load_version
+    unless @deploy.version_id.blank?
+      @version = Version.find @deploy.version_id
+    end
+  end
+
   def load_project
     @project = Project.find_by(identifier: params[:project_id])
   end
+
+  def set_recipients
+    @recipients = @project.customers_deploys_notifications_emails
+    if params[:client].present?
+      if params[:client]=='false'
+        @recipients = ''
+      end
+    end
+  end
+
 
 end

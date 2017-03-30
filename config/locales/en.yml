@@ -42,10 +42,15 @@ en:
       release_notes: Release notes
       affected_projects: Affected Projects
       authorization: Authorization
+      author: Author
+      version: Version
       edit: Edit
       send_start_mail: Send start deploy mail
       send_successful_end_mail: Send successful end mail
       send_rollback_mail: Send rollback mail
+      send_start_mail_no_client: Send start deploy mail (not to clients)
+      send_successful_end_mail_no_client: Send successful end mail (not to clients)
+      send_rollback_mail_no_client: Send rollback mail (not to clients)
     edit:
       button_send: "Save changes"
     update:
