@@ -43,6 +43,8 @@ es:
       affected_projects: Proyectos afectados
       authorization: Autorización
       edit: Editar
+      author: Autor
+      version: Versión
       send_start_mail: Enviar correo de inicio de despliegue
       send_successful_end_mail: Enviar correo de finalización correcta
       send_rollback_mail: Enviar correo de finalización fallida

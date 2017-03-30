@@ -42,6 +42,8 @@ en:
       release_notes: Release notes
       affected_projects: Affected Projects
       authorization: Authorization
+      author: Author
+      version: Version
       edit: Edit
       send_start_mail: Send start deploy mail
       send_successful_end_mail: Send successful end mail
