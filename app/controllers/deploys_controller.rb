@@ -76,6 +76,7 @@ class DeploysController < ApplicationController
       deploy_params = load_from_params
       @deploy = Deploy.create(deploy_params)
       @deploy.state = 'pending'
+      @deploy.user_id = User.current.id
     end
 
     if(@deploy.save)
@@ -109,6 +110,7 @@ class DeploysController < ApplicationController
     deploy_params[:start_time] = start_time
     deploy_params[:estimated_end_time] = end_time
     deploy_params[:project] = params[:project_id]
+    deploy_params[:version_id] = params[:version]
 
     deploy_params
   end
@@ -116,6 +118,18 @@ class DeploysController < ApplicationController
   def load_deploy
     @deploy = Deploy.find_by_id(params[:id])
     @project_issues = @project.issues
+  end
+
+  def load_author
+    unless @deploy.user_id.blank?
+      @user = User.find @deploy.user_id
+    end
+  end
+
+  def load_version
+    unless @deploy.version_id.blank?
+      @version = Version.find @deploy.version_id
+    end
   end
 
   def load_project
