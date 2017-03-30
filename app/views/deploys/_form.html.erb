@@ -1,13 +1,16 @@
 
 
+<p><%= f.date_field(:date, required: true) %></p>
+<p><%= f.time_field(:start_time, required: true) %></p>
+<p><%= f.time_field(:estimated_end_time, required: true) %></p>
+<p><%= f.text_area(:release_notes, :rows => 8, :required => true) %></p>
+<p><%= f.text_field(:affected_projects, :size => 30, :required => false) %></p>
+<p><%= f.text_field(:authorization, :size => 30, :required => false) %></p>
 
+<% if @project.versions.present? %>
+  <p><%= f.label :version %>
+  <%= select_tag "version", options_from_collection_for_select(@project.versions, "id", "name") %>
+<% end %>
 
-  <p><%= f.date_field(:date, required: true) %></p>
-  <p><%= f.time_field(:start_time, required: true) %></p>
-  <p><%= f.time_field(:estimated_end_time, required: true) %></p>
-  <p><%= f.text_area(:release_notes, :rows => 8, :required => true) %></p>
-  <p><%= f.text_field(:affected_projects, :size => 30, :required => false) %></p>
-  <p><%= f.text_field(:authorization, :size => 30, :required => false) %></p>
-
-  <p><%= f.label :issues %>
-  <%= f.collection_select(:issue_ids, @project_issues, :id, :id, {:include_blank => ''}, {:required => true, multiple: true, class: 'select2_wide'})%></p>
+<p><%= f.label :issues %>
+<%= f.collection_select(:issue_ids, @project_issues, :id, :id, {:include_blank => ''}, {:required => true, multiple: true, class: 'select2_wide'})%></p>
