@@ -1,13 +1,13 @@
 
 Hola.
 
-Notificamos el siguiente despliegue a las <%=  @deploy.start_time.in_time_zone(Time.now.getlocal.zone).strftime("%H:%M") %>:
+Notificamos el siguiente despliegue a las <%=  @deploy.start_time.in_time_zone(Time.zone).strftime("%H:%M") %>:
 
 *Release notes <%= @deploy.deploy_name %>*
 
 <%= @deploy.release_notes unless @deploy.release_notes.blank? %>
 
-Ventana de deploy: <%= @deploy.date %> <%=  @deploy.start_time.in_time_zone(Time.now.getlocal.zone).strftime("%H:%M") %> - <%=  @deploy.estimated_end_time.in_time_zone(Time.now.getlocal.zone).strftime("%H:%M") %>
+Ventana de deploy: <%= @deploy.date %> <%=  @deploy.start_time.in_time_zone(Time.zone).strftime("%H:%M") %> - <%=  @deploy.estimated_end_time.in_time_zone(Time.zone).strftime("%H:%M") %>
 
 <% unless @deploy.authorization.blank? %>
  Autorizado por: <%= @deploy.authorization %>
