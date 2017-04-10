@@ -1,0 +1,67 @@
+ru:
+  pending: "В ожидании"
+  in_progress: "В процессе"
+  finished: "Окончено успешно"
+  failed: "Окончено неудачно"
+  field_date: "Дата"
+  field_start_time: "Время начала"
+  field_estimated_end_time: "Время окончания"
+  field_affected_projects: "Затронутые проекты (опционально)"
+  field_release_notes: "Примечания к выпуску"
+  field_authorization: "Авторизация (опционально)"
+  button_send: "Создать деплой"
+  field_customers_deploys_notifications_emails: "Почтовые ящики для уведомления клиентов о деплое"
+  field_deploys_notifications_emails: "Почтовые ящики для уведомления для сотрудников о деплое"
+  field_abbreviation: "Аббревиатура проекта"
+  hooks:
+    issue_deploys:
+      appears_in_these_deploys: 'Деплои'
+  project_deployer_settings:
+    deployer_settings: 'Настройки деплоя'
+  deploys:
+    index:
+      new_deploy: 'Создать новый деплой'
+      create_new_deploy: 'Создать новый деплой'
+      name: 'Имя'
+      release_notes: 'Примечания к выпуску'
+      date: 'Дата'
+      state: 'Состояние'
+      deploys: 'Деплои'
+      view: 'Вид'
+      edit: 'Редактирование'
+      are_you_sure: 'Вы уверены?'
+    new:
+      new_deploy: 'Новый деплой'
+      button_send: 'Создать деплой'
+    show:
+      issue: 'Задание %{index}'
+      issues: 'Задания'
+      date: 'Дата'
+      start_time: 'Время начала'
+      estimated_end_time: 'Предполагаемое время окончания'
+      release_notes: Примечания к выпуску
+      affected_projects: Затронутые проекты
+      authorization: Авторизация
+      author: Автор
+      version: Версия
+      edit: Редактирование
+      send_start_mail: Отправить сообщение о начале деплоя
+      send_successful_end_mail: Отправить сообщение об успешном окончании
+      send_rollback_mail: Отправить сообщение об откате
+      send_start_mail_no_client: Отправить сообщение о начале деплоя (не клиентам)
+      send_successful_end_mail_no_client: Отправить сообщение об успешном окончании (не клиентам)
+      send_rollback_mail_no_client: Отправить сообщение об откате (не клиентам)
+    edit:
+      button_send: "Сохранить изменения"
+    update:
+      deploy_updated: "Деплой обновлен"
+    create:
+      new_deploy_created: 'Создан новый деплой'
+    send_start:
+      mails_sent: "Письма отправлены"
+    send_successful_end:
+      mails_sent: "Письма отправлены"
+    send_rollback:
+      mails_sent: "Письма отправлены"
+    delete:
+      deleted: "Деплой удален корректно"
