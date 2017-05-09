@@ -17,46 +17,46 @@ en:
     issue_deploys:
       appears_in_these_deploys: "Deploys"
   project_deployer_settings:
-    deployer_settings: 'Deployer Settings'
+    deployer_settings: "Deployer Settings"
   deploys:
     index:
-      new_deploy: 'Create new deploy'
-      create_new_deploy: 'Create new deploy'
-      name: 'Name'
-      release_notes: 'Release Notes'
-      date: 'Date'
-      state: 'State'
-      deploys: 'Deploys'
+      new_deploy: "Create new deploy"
+      create_new_deploy: "Create new deploy"
+      name: "Name"
+      release_notes: "Release Notes"
+      date: "Date"
+      state: "State"
+      deploys: "Deploys"
       view: "View"
       edit: "Edit"
       are_you_sure: "Are you sure?"
     new:
-      new_deploy: 'New Deploy'
+      new_deploy: "New Deploy"
       button_send: "Create Deploy"
     show:
-      issue: 'Issue %{index}'
-      issues: 'Issues'
-      date: 'Date'
-      start_time: 'Start Time'
-      estimated_end_time: 'Estimated end time'
-      release_notes: Release notes
-      affected_projects: Affected Projects
-      authorization: Authorization
-      author: Author
-      version: Version
-      edit: Edit
-      send_start_mail: Send start deploy mail
-      send_successful_end_mail: Send successful end mail
-      send_rollback_mail: Send rollback mail
-      send_start_mail_no_client: Send start deploy mail (not to clients)
-      send_successful_end_mail_no_client: Send successful end mail (not to clients)
-      send_rollback_mail_no_client: Send rollback mail (not to clients)
+      issue: "Issue %{index}"
+      issues: "Issues"
+      date: "Date"
+      start_time: "Start Time"
+      estimated_end_time: "Estimated end time"
+      release_notes: "Release notes"
+      affected_projects: "Affected Projects"
+      authorization: "Authorization"
+      author: "Author"
+      version: "Version"
+      edit: "Edit"
+      send_start_mail: "Send start deploy mail"
+      send_successful_end_mail: "Send successful end mail"
+      send_rollback_mail: "Send rollback mail"
+      send_start_mail_no_client: "Send start deploy mail (not to clients)"
+      send_successful_end_mail_no_client: "Send successful end mail (not to clients)"
+      send_rollback_mail_no_client: "Send rollback mail (not to clients)"
     edit:
       button_send: "Save changes"
     update:
       deploy_updated: "Deploy updated"
     create:
-      new_deploy_created: 'New deploy created'
+      new_deploy_created: "New deploy created"
     send_start:
       mails_sent: "Mails sent"
     send_successful_end:
