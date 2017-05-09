@@ -34,8 +34,8 @@ en:
       new_deploy: "Nowe wdrożenie"
       button_send: "Utwórz wdrożenie"
     show:
-      issue: "Issue %{index}"
-      issues: "Issues"
+      issue: "Zagadnienie %{index}"
+      issues: "Zagadnienia"
       date: "Data"
       start_time: "Czas rozpoczęcia"
       estimated_end_time: "Przewidywany czas zakończenia"
