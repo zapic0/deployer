@@ -15,48 +15,48 @@ ru:
   field_abbreviation: "Аббревиатура проекта"
   hooks:
     issue_deploys:
-      appears_in_these_deploys: 'Деплои'
+      appears_in_these_deploys: "Деплои"
   project_deployer_settings:
-    deployer_settings: 'Настройки деплоя'
+    deployer_settings: "Настройки деплоя"
   deploys:
     index:
-      new_deploy: 'Создать новый деплой'
-      create_new_deploy: 'Создать новый деплой'
-      name: 'Имя'
-      release_notes: 'Примечания к выпуску'
-      date: 'Дата'
-      state: 'Состояние'
-      deploys: 'Деплои'
-      view: 'Вид'
-      edit: 'Редактирование'
-      are_you_sure: 'Вы уверены?'
+      new_deploy: "Создать новый деплой"
+      create_new_deploy: "Создать новый деплой"
+      name: "Имя"
+      release_notes: "Примечания к выпуску"
+      date: "Дата"
+      state: "Состояние"
+      deploys: "Деплои"
+      view: "Вид"
+      edit: "Редактирование"
+      are_you_sure: "Вы уверены?"
     new:
-      new_deploy: 'Новый деплой'
-      button_send: 'Создать деплой'
+      new_deploy: "Новый деплой"
+      button_send: "Создать деплой"
     show:
-      issue: 'Задание %{index}'
-      issues: 'Задания'
-      date: 'Дата'
-      start_time: 'Время начала'
-      estimated_end_time: 'Предполагаемое время окончания'
-      release_notes: Примечания к выпуску
-      affected_projects: Затронутые проекты
-      authorization: Авторизация
-      author: Автор
-      version: Версия
-      edit: Редактирование
-      send_start_mail: Отправить сообщение о начале деплоя
-      send_successful_end_mail: Отправить сообщение об успешном окончании
-      send_rollback_mail: Отправить сообщение об откате
-      send_start_mail_no_client: Отправить сообщение о начале деплоя (не клиентам)
-      send_successful_end_mail_no_client: Отправить сообщение об успешном окончании (не клиентам)
-      send_rollback_mail_no_client: Отправить сообщение об откате (не клиентам)
+      issue: "Задание %{index}"
+      issues: "Задания"
+      date: "Дата"
+      start_time: "Время начала"
+      estimated_end_time: "Предполагаемое время окончания"
+      release_notes: "Примечания к выпуску"
+      affected_projects: "Затронутые проекты"
+      authorization: "Авторизация"
+      author: "Автор"
+      version: "Версия"
+      edit: "Редактирование"
+      send_start_mail: "Отправить сообщение о начале деплоя"
+      send_successful_end_mail: "Отправить сообщение об успешном окончании"
+      send_rollback_mail: "Отправить сообщение об откате"
+      send_start_mail_no_client: "Отправить сообщение о начале деплоя (не клиентам)"
+      send_successful_end_mail_no_client: "Отправить сообщение об успешном окончании (не клиентам)"
+      send_rollback_mail_no_client: "Отправить сообщение об откате (не клиентам)"
     edit:
       button_send: "Сохранить изменения"
     update:
       deploy_updated: "Деплой обновлен"
     create:
-      new_deploy_created: 'Создан новый деплой'
+      new_deploy_created: "Создан новый деплой"
     send_start:
       mails_sent: "Письма отправлены"
     send_successful_end:

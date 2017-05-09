@@ -1,0 +1,68 @@
+en:
+  pending: "Nie wdrożony"
+  in_progress: "W trakcie"
+  finished: "Ukończony"
+  failed: "Z błędem"
+  field_date: "Data"
+  field_start_time: "Czas rozpoczęcia"
+  field_estimated_end_time: "Czas zakończenia"
+  field_affected_projects: "Affected Projects (optional)"
+  field_release_notes: "Notatka z wersji"
+  field_authorization: "Autoryzacja (optional)"
+  button_send: "Utwórz wdrożenie"
+  field_customers_deploys_notifications_emails: "Email informujący klientów lub innych ludzi o nowym drożeniu"
+  field_deploys_notifications_emails: "Email informujący współpracowników o nowym wdrożeniu"
+  field_abbreviation: "Project name abbreviation"
+  hooks:
+    issue_deploys:
+      appears_in_these_deploys: "Wdrożenia"
+  project_deployer_settings:
+    deployer_settings: "Ustawienia Deployer"
+  deploys:
+    index:
+      new_deploy: "Utwórz nowe wdrożenie"
+      create_new_deploy: "Utwórz nowe wdrożenie"
+      name: "Nazwa"
+      release_notes: "Notatka do wersji"
+      date: "Data"
+      state: "Status"
+      deploys: "Wdrożenia"
+      view: "Widok"
+      edit: "Edycja"
+      are_you_sure: "Jesteś pewny?"
+    new:
+      new_deploy: "Nowe wdrożenie"
+      button_send: "Utwórz wdrożenie"
+    show:
+      issue: "Zagadnienie %{index}"
+      issues: "Zagadnienia"
+      date: "Data"
+      start_time: "Czas rozpoczęcia"
+      estimated_end_time: "Przewidywany czas zakończenia"
+      release_notes: "Notatka do wersji"
+      affected_projects: "Affected Projects"
+      authorization: "Autoryzacja"
+      author: "Autor"
+      version: "Wersja"
+      edit: "Edycja"
+      send_start_mail: "Wyślij email o rozpoczęciu wdrożenia"
+      send_successful_end_mail: "Wyślij email o poprawnym wdrożeniu"
+      send_rollback_mail: "Wyślij email o cofnięciu zmian"
+      send_start_mail_no_client: "Wyślij email o rozpoczęciu wdrożenia (nie do klientów)"
+      send_successful_end_mail_no_client: "Wyślij email o poprawnym wdrożeniu (nie do klientów)"
+      send_rollback_mail_no_client: "Wyślij email o cofnięciu zmian (nie do klientów)"
+    edit:
+      button_send: "Zapisz zaminy"
+    update:
+      deploy_updated: "Wdrożenie zaktualizowane"
+    create:
+      new_deploy_created: "Utwórz wdrożenie"
+    send_start:
+      mails_sent: "Email Wysłany"
+    send_successful_end:
+      mails_sent: "Email poprawnie wysłany"
+    send_rollback:
+      mails_sent: "Email wysłany"
+    delete:
+      deleted: "Wdrożenie poprawnie usunięte"
+
