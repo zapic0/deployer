@@ -1,4 +1,4 @@
-class AddVersionsAndAuthorsToDeploys < ActiveRecord::Migration
+class AddVersionsAndAuthorsToDeploys < ActiveRecord::Migration[4.2]
   def change
     change_table :deploys do |t|
       t.references :version
