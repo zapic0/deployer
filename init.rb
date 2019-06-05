@@ -1,8 +1,14 @@
 require_dependency 'deployer/hooks'
-
-ActionDispatch::Callbacks.to_prepare do
+if Rails::VERSION::MAJOR >= 5 and Rails::VERSION::MINOR >= 1
+  ActiveSupport::Reloader.to_prepare do
   require_dependency 'deployer/issue_patch'
   require_dependency 'deployer/project_patch'
+  end
+else
+  ActionDispatch::Callbacks.to_prepare do
+    require_dependency 'deployer/issue_patch'
+    require_dependency 'deployer/project_patch'
+  end
 end
 
 
